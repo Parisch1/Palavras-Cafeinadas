@@ -1,0 +1,12 @@
+@font-face {
+    font-family: CormorantGaramond-Regular;
+    src: url(fontes/CormorantGaramond-Regular.ttf);
+}
+@font-face {
+    font-family: CormorantGaramond-Bold;
+    src: url(fontes/CormorantGaramond-Bold.ttf);
+}
+@font-face {
+    font-family: OpenSans;
+    src: url(fontes/OpenSans.ttf);
+}
