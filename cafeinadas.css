@@ -1,7 +1,11 @@
+*{
+    margin: 0;
+    font-weight: inherit;
+    font-size: inherit;
+}
 body{
     background-color: #F5F3ED;
     top: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -11,20 +15,17 @@ img{
     width: inherit;
     height: inherit;
 }
-p{
-    margin: 0;
-    font-size: inherit;
-}
-h3{
-    margin: 0px;
-    font-size: inherit;
-    font-weight: inherit;
+button{
+    text-decoration: 0;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    color: #fff;
 }
 /********* LOGO ************/
-h1{
-    margin: 0px;
+header h1{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 400;
     font-family: CormorantGaramond-Bold;
 }
 .logo{
@@ -43,12 +44,11 @@ a{
     color: inherit;
 }
 h2{
-    margin: 0px;
     font-family: CormorantGaramond-Regular;
     font-size: 19px;
     font-weight: 400;
 }
-hr{
+.link hr{
     color: #b2724a;
     background-color: #b2724a;
     width: 70%;
@@ -137,7 +137,7 @@ header{
     font-size: 30px;
     font-weight: 250;
 }
-.home-botao{
+.home-botao, .sobre-botao, .form-botao{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -149,6 +149,9 @@ header{
     font-size: 20px;
     font-weight: 700;
 }
+.home-botao:hover, .sobre-botao:hover, .form-botao:hover{
+    background-color: #b2724a;
+}
 
 /*********** SOBRE NÓS ************/
 .sobre-nos {
@@ -157,10 +160,11 @@ header{
     display: flex;
     align-content: center;
     justify-content: center;
+    padding: 5vh 0 15vh 0;
 }
 .sobre-nos-direita {
     height: 100%;
-    width: 45%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -172,31 +176,19 @@ header{
     align-items: center;
     display: flex;
 }
-.sobre-botao{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #8F542E;
-    color: white;
-    width: 280px;
-    height: 55px;
-    border-radius: 8px;
-    font-family: OpenSans;
-    font-size: 20px;
-    font-weight: 700;
-}
+
 /******** SOBRE NOS - TITULO *********/
 .sobre-titulo{
     font-family: CormorantGaramond;
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 300;
     position: relative;
 }
 .sobre-txt{
     font-family: OpenSans;
     font-weight: 500;
 }
-#hr-sobre-nos{
+.sobre-titulo hr, .contato-titulo hr{
     position: absolute;
     z-index: -1;
     color: #FBC9A8;
@@ -205,6 +197,8 @@ header{
     height: 28px;
     border-radius: 0px;
     margin: -25px 0px 0px -15px;
+    border: transparent;
+    
 }
 
 /******* SOBRE NÓS - IMAGEM LATERAL *********/
@@ -217,60 +211,46 @@ header{
     margin-right: -100px;
 }
 
-/********** ONDA CAFÉ - FAZER CERTINHO AINDA ********/
-#onda-cafe{
-    position: absolute;
-    display: block;
+/********** ONDA CAFÉ  ********/
+.onda-cafe{
+    position: relative;
+    z-index: 4;
 }
 .cont-onda-cafe{
-    position: relative;
-    height: 200px;
-    width: 100vw;
-    background-image: url(cafe.svg);
-}
-/*
-.cont-onda-cafe::before{
-    content: "";
-    display: block;
     position: absolute;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: #F5F3ED;
-    top: 40px;  
-   left: 0;
+    margin-top: -100px;
+    
 }
-.cont-onda-cafe::after{
-    content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 50vw;
-    height: 70px;
-    background-image: url(cafe.svg);
-    left: 0;
-    top: 27px;
-}
-*/
-
 
 /******** CARROSSEL *********/
 .cafeteria{
     background-color: #8F542E;
     width: 100vw;
-    height: 100%;
-    padding-top: 100px;
+    min-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-content: center;
 }
-.cafeteria-titulo{
+.cafeteria-titulo hr{
+    color: #b2724a;
+    background-color: #b2724a;
+    width: 15%;
+    height: 2.5px;
+    border-radius: 20px;
+    border-width: 0px;
+    margin: 5px;
+}
+.cafeteria-titulo-txt{
     font-family: CormorantGaramond;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 40px;
     color: white;
+}
+.cafeteria-titulo{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -278,9 +258,223 @@ header{
     align-content: center;
     align-items: center;
 }
-.cafeteria-titulo-detalhe{
-    width: 250px;
-    height: 3px;
-    background-color: #B2784A;
-    border-radius: 5px;
+
+/*CARROSSEL 2 CAFETERIA*/
+
+.container-slider{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+
+.container-painel{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+.slider {
+    opacity: 0;
+    transition: opacity .5s;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    border-radius: 10px;
+}
+.on {
+    opacity: 1;
+}
+
+.painel{
+    display: flex;
+    align-items: flex-start;
+    height: 400px;
+    max-width: 345px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    flex-direction: column;
+    cursor: pointer;
+    font-family: OpenSans;
+}
+.painel-img{
+    width: 313px;
+    height: 270px;
+    margin: 16px 16px 0 16px;
+}
+.painel .img-carrossel{
+    object-fit: cover;
+    border-radius: 8px;
+}
+.painel h4{
+    position: relative;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    margin: 8px 0 0 16px;
+}
+.painel span{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin: 4px 0 0 16px;
+    width: 80%;
+}
+
+/*
+@media screen and (max-width: 900px) {
+    .container-carrossel .carrossel{
+        grid-auto-columns: calc((100% / 2) - 12px);
+    }
+}
+@media screen and (max-width: 600px){
+    .container-carrossel .carrossel{
+        grid-auto-columns: 100%;
+    }
+}*/
+
+/***** ENTRE EM CONTATO *****/
+
+.contato{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 128px;
+}
+.contato-titulo{
+    width: 100%;
+    align-self: flex-start;
+    margin-left: 136px;
+    font-size: 40px;
+    position: relative;
+}
+#hr-contato{
+    width: 420px;
+}
+.container-contato{
+    height: 711px;
+    width: 80%;
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #1F0C0033
+}
+.container-inform{
+    width: 45%;
+    height: 100%;
+    background-color: #8F542E;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: column;
+}
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    margin: 43px 0 0 35px;
+    gap: 16px;
+}
+.inform-txt{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.inform-txt p{
+    color: #f0f0f0;
+    font-family: OpenSans;
+    font-size: 18px;
+    font-weight: 700;
+}
+.inform-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.inform-logo p{
+    font-family: CormorantGaramond-Regular;
+    font-size: 35px;
+    font-weight: 400;
+    color: #f0f0f0;
+}
+.container-inform hr{
+    width: 348px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: #b2724a;
+    border: none;
+}
+.container-forms{
+    width: 55%;
+    height: 100%;
+    
+}
+.container-forms form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 10px 40px;
+    height: 100%;
+}
+form input, textarea{
+    width: 100%;
+    height: 100%;
+}
+#form-nome, #form-email{
+    height: 10%;
+}
+#form-mensagem{
+    height: 30%;
+}
+.form-item input[type=text]{
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #8F542E;
+    border-width: 1px;
+}
+.form-item textarea{
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #8F542E;
+    border-width: 1px;
+    resize: none;
+}
+.form-item label{
+    font-family: OpenSans;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+footer{
+    margin-top: 128px;
+    bottom: 0;
+    background-color: #57290B;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+}
+footer p{
+    color: #fff;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: 400;
 }
