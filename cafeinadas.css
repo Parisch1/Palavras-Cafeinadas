@@ -4,7 +4,7 @@
     font-size: inherit;
 }
 body{
-    background-color: #F5F3ED;
+    background-color: #FFFFFF;
     top: 0;
     display: flex;
     flex-direction: column;
@@ -38,6 +38,9 @@ header h1{
     width: 2px;
     height: 5px;
 }
+.menu-mobile{
+    display: none;
+}
 /**************** LINKS ******************/
 a{
     text-decoration: none;
@@ -45,7 +48,7 @@ a{
 }
 h2{
     font-family: CormorantGaramond-Regular;
-    font-size: 19px;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 .link hr{
@@ -76,7 +79,7 @@ h2{
 /************** HEADER GERAL ********************/
 header{
     width: 100%;
-    height: 15%;
+    height: 100px;
     position: fixed;
     background-color: #57290B;
     background-size: cover;
@@ -129,12 +132,12 @@ header{
 }
 .home-txt-prin{
     font-family: OpenSans;
-    font-size: 56px;
+    font-size: 3.5rem;
     font-weight: 700;
 }
 .home-txt-sec{
     font-family: OpenSans;
-    font-size: 30px;
+    font-size: 1.8rem;
     font-weight: 250;
 }
 .home-botao, .sobre-botao, .form-botao{
@@ -213,8 +216,12 @@ header{
 
 /********** ONDA CAFÉ  ********/
 .onda-cafe{
+    width: 100vw;
     position: relative;
     z-index: 4;
+}
+#onda-cafe-mobile{
+    display: none;
 }
 .cont-onda-cafe{
     position: absolute;
@@ -328,18 +335,6 @@ header{
     margin: 4px 0 0 16px;
     width: 80%;
 }
-
-/*
-@media screen and (max-width: 900px) {
-    .container-carrossel .carrossel{
-        grid-auto-columns: calc((100% / 2) - 12px);
-    }
-}
-@media screen and (max-width: 600px){
-    .container-carrossel .carrossel{
-        grid-auto-columns: 100%;
-    }
-}*/
 
 /***** ENTRE EM CONTATO *****/
 
@@ -478,3 +473,199 @@ footer p{
     font-size: 16px;
     font-weight: 400;
 }
+
+@media only screen and (max-width: 600px){
+    .link, .header-direita, .header-esquerda{
+        display: none;
+    }
+    .header-mobile{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+    }
+    .logo{
+        margin: 0 10px;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .menu-mobile{
+        display: block;
+    }
+    .container-menu{
+        display: none;
+    }
+    .menu{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100vw;
+        height: 60vh;
+        z-index: 6;
+        background-color: #F5F3ED;
+        color: black;
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .link-menu{
+        width: 80%;
+        height: 78px;
+        background-color: #ffffff;
+        box-shadow: -4px 7px 29px 6px #1F0C0033;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 8px;
+        padding-left: 24px;
+    }
+    .link-menu a{
+        font-size: 24px;
+        font-weight: 700;
+        font-family: OpenSans;
+        color: #1F0C00;
+        
+    }
+    
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+    
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 2px;
+        background-color: #B2784A;
+        border-radius: 8px;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    
+    .change .bar1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+    
+    .change .bar2 {
+        opacity: 0;
+    }
+    
+    .change .bar3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+    .encontre{
+        display: none;
+    }
+    /**********   HOME     ***********/
+    .home{
+        height: 241px;
+        margin-top: 100px;
+        background-image: url(imagens/Header-img-mobile.png);
+    }
+    .body-home{
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: white;
+        margin: 0 0 0 20px;
+    }
+    .home-txt-prin{
+        font-size: 28px;
+    }
+    .home-txt-sec{
+        display: none;
+    }
+    /************ SOBRE NOS ****************/
+    .sobre-nos{
+        padding: 0;
+        height: 70vh;
+        margin-bottom: 50px;
+    }
+    .xicaras, .sobre-nos-esquerda{
+        display: none;
+    }
+    .sobre-nos-direita{
+        width: 80%;
+        justify-content: space-evenly   ;
+    }
+    .sobre-txt{
+        font-size: 18px;
+    }
+    #onda-cafe-mobile{
+        display: block;
+    }
+    #onda-cafe{
+        display: none;
+    }
+    .onda-cafe{
+        width: 100vw;
+    }
+    .cont-onda-cafe{
+        width: 100%;
+        margin-top: -70px;
+    }
+    /********** ENTRE EM CONTATO ***********/
+    .contato{
+        padding-top: 50px;
+    }
+    .container-contato{
+        margin-top: 64px;
+    }
+    .container-inform{
+        display: none;
+    }
+    .contato-titulo{
+        margin-left: 30px;
+        font-size: 30px;
+    }
+    #hr-contato{
+        margin: -18px 0 0 -18px;
+        width: 325px;
+    }
+    .container-forms form{
+        margin: 0;
+    }
+    .container-forms{
+        width: 80%; 
+    }
+    .form-botao{
+        width: 200px;
+        font-size: 15px;
+    }
+    .encontre{
+        display: block;
+        margin-top: 50px;
+    }
+    .encontre-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+    .encontre-txt p{
+        font-family: CormorantGaramond-Bold;
+        font-size: 20px;
+    }
+    .encontre-icons{
+        display: flex;
+        gap: 20px;
+    }
+
+    footer{
+        width: 100vw;
+        margin-top: 50px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0;
+    }
+    footer p{
+        margin: 0 0 0 10px;
+    }
+}
+
