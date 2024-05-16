@@ -1,20 +1,33 @@
 const slider = document.querySelectorAll('.slider');
+const painel = document.querySelectorAll('.painel-mobile');
 const btnPrev = document.getElementById('prev-btn');
 const btnNext = document.getElementById('next-btn');
 
 let currentSlide = 0;
 
+function telaPequena (){
+    return window.matchMedia("(max-width: 600px)").matches;
+}
+
+let Slide = 0; 
+
+if (telaPequena()){
+    Slide = painel;
+} else {
+    Slide = slider;
+}
+
 function hideSlider(){
-    slider.forEach(item => item.classList.remove('on'));
+    Slide.forEach(item => item.classList.remove('on'));
 }
 
 function showSlider(){
-    slider[currentSlide].classList.add('on');
+    Slide[currentSlide].classList.add('on');
 }
 
 function nextSlider(){
     hideSlider()
-    if(currentSlide === slider.length -1){
+    if(currentSlide === Slide.length -1){
         currentSlide = 0;
     }
     else{
@@ -26,7 +39,7 @@ function nextSlider(){
 function prevSlider(){
     hideSlider()
         if(currentSlide === 0){
-            currentSlide = slider.length -1;
+            currentSlide = Slide.length -1;
         }
         else {
             currentSlide--;
@@ -34,8 +47,11 @@ function prevSlider(){
     showSlider();
 }
 
+
 btnNext.addEventListener('click', nextSlider);
 btnPrev.addEventListener('click', prevSlider);
+
+// menu mobile
 
 const menuItens = document.querySelector('.container-menu');
 const titulo = document.getElementById('titulo');
@@ -52,3 +68,27 @@ function myFunction(x) {
         titulo.style.display = 'none'
     }
 }
+
+// Slides mobile
+function isScreenSmall() {
+    return window.matchMedia("(max-width: 600px)").matches;
+}
+
+function removeDivFilha() {
+    if (isScreenSmall()) {
+        var divContainerPainel = document.getElementById('container-slider');
+        var divSlider1 = document.getElementById('slider-1');
+        var divSlider2 = document.getElementById('slider-2');
+        
+        
+        if (divSlider1 && divSlider2) {
+           
+            divSlider1.replaceWith(...divSlider1.childNodes);
+            divSlider2.replaceWith(...divSlider2.childNodes);
+        }
+    }
+}
+
+
+window.addEventListener('load', removeDivFilha);
+window.addEventListener('resize', removeDivFilha);

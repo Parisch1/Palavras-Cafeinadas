@@ -473,8 +473,11 @@ footer p{
     font-size: 16px;
     font-weight: 400;
 }
+.encontre{
+    display: none;
+}
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 789px){
     .link, .header-direita, .header-esquerda{
         display: none;
     }
@@ -666,6 +669,21 @@ footer p{
     }
     footer p{
         margin: 0 0 0 10px;
+    }
+    
+    .painel-mobile{
+        opacity: 0;
+        transition: opacity .5s;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .on {
+        opacity: 1;
     }
 }
 
