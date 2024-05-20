@@ -245,7 +245,7 @@ header{
 .cafeteria-titulo hr{
     color: #b2724a;
     background-color: #b2724a;
-    width: 15%;
+    width: 200px;
     height: 2.5px;
     border-radius: 20px;
     border-width: 0px;
@@ -478,6 +478,9 @@ footer p{
 }
 
 @media only screen and (max-width: 789px){
+    body{
+        overflow-x: hidden;
+    }
     .link, .header-direita, .header-esquerda{
         display: none;
     }

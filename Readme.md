@@ -1,1 +1,1 @@
-Este é um projeto que estou trabalhando para a ej que faço parte
+Projeto de um site de uma cafeteria 
