@@ -10,6 +10,7 @@ body{
     flex-direction: column;
     height: 100%;
     overflow-x: hidden;
+    width: 100%;
 }
 img{
     width: inherit;
@@ -226,7 +227,7 @@ header{
 .cont-onda-cafe{
     position: absolute;
     margin-top: -100px;
-    
+    width: 100%;
 }
 
 /******** CARROSSEL *********/
@@ -479,7 +480,7 @@ footer p{
 
 @media only screen and (max-width: 789px){
     body{
-        overflow-x: hidden;
+        overflow-x: none;
     }
     .link, .header-direita, .header-esquerda{
         display: none;
@@ -684,6 +685,7 @@ footer p{
         gap: 16px;
         width: 100%;
         border-radius: 10px;
+        overflow-x: hidden;
     }
     .on {
         opacity: 1;
